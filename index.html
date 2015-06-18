@@ -195,63 +195,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/06/17/hello-world/" class="article-date">
-  	<time datetime="2015-06-17T09:26:07.295Z" itemprop="datePublished">2015-06-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
     <article id="post-使用hexo搭建自己的静态博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -279,8 +222,44 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>万事开头难,折腾了半天,总算是把这个博客给搭起来了.其实过程也并没有想象的那么难.所以在这里我也跟大家分享一下搭建此博客的过程以及遇到过的一些问题.在开始之前呢,先还是来了解一下搭建前需要了解的知识和准备工作.</p>
-<h2 id="hexo是什么?">hexo是什么?</h2><p>Hexo 是一款基于node 的静态博客网站生成器,是由台湾的一名大学生<a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>所写.相比其他的静态网页生成器而言,有着生成静态网页最快，插件丰富的优势.用官方的话来说hexo就是一个快速、简洁且高效的博客框架.</p>
-<p>官网地址:<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a>     中文网:<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></p>
+<h2 id="hexo是什么?">hexo是什么?</h2><p>Hexo 是一款基于node 的静态博客网站生成器,是由台湾的一名大学生<a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>所写.相比其他的静态网页生成器而言,有着生成静态网页最快，插件丰富的优势.用官方的话来说hexo就是一个快速、简洁且高效的博客框架,Hexo 使用 Markdown(或其他渲染引擎)解析文章,在几秒内,即可利用靓丽的主题生成静态网页。</p>
+<blockquote>
+<p>官网地址:<a href="https://hexo.io" target="_blank" rel="external">https://hexo.io</a></p>
+<p>中文网:<a href="https://hexo.io/zh-cn" target="_blank" rel="external">https://hexo.io/zh-cn</a></p>
+</blockquote>
+<p>hexo的内容大致就说这么多了,具体细节大家可以查看中文网的文档去进行操作,文档的说明还是比较全面和详细的,按照官方的步骤去执行的话,是可以在很短时间内搭建属于自己的博客的.本文主要详细说明一下如何把安装后的博客发布到github上去.然而这些在hexo的官网是没有的.</p>
+<h2 id="github与git">github与git</h2><p>git,一个非常强大的版本管理工具.Github则是一个基于Git的日益流行的开源项目托管库.Git与svn的最大区别是,它的使用流程不需要联机，可以先将对代码的修改,评论,保存在本机.等上网之后,再实时推送过去。同时它创建分支与合并分支更容易,推送速度也更快,配合Github提交需求也更容易.</p>
+<p>实际上,我们只需在自己电脑安装上github的客户端即可把我们的博客发布到github pages上去了.至于为何用github pages的话,我想这都是毋庸置疑的.github pages有着300M的免费空间,资料自己保存管理,这样咱才放心嘛,对不对.最主要是github是趋势,上面也有很多大牛.总之好处多多吧 - -</p>
+<blockquote>
+<p>github for windows 下载地址:<a href="https://windows.github.com" target="_blank" rel="external">https://windows.github.com</a></p>
+<p>github for mac 下载地址:<a href="https://mac.github.com" target="_blank" rel="external">https://mac.github.com</a></p>
+</blockquote>
+<p>安装完成以后,运行github,登录你的github帐号即可.没有帐号的话,大家自行去<a href="https://github.com" target="_blank" rel="external">https://github.com</a>注册帐号.如下图(点击sign up注册即可):</p>
+<p><img src="images/github_reg.png" alt=""></p>
+<p>注册的过程就不详解了,都是比较简单的输入帐号啊密码邮箱什么的就可以了.注册完成以后我们就开始要建立自己的仓库了,如下图:</p>
+<p><img src="images/github_add_rep.png" alt=""></p>
+<p>图中所示是因为我这个账号之前已经有建过一个仓库了,新账号注册是没有的,所以我们点击右上角的 + 号新建一个repository或者点击下方绿色按钮也可.如下图所示:</p>
+<p><img src="images/github_add_rep2.png" alt=""></p>
+<p>我们需要为自己的仓库指定一个repository name,这里要注意了,这个name的格式必须为 your username.github.io,如图所示,把xxxxxx替换成你的username即可.然后点击create repository.(由于我们是用的免费版,所以不能创建私有的仓库,如有需要,大家可自行购买收费版).创建好了自己的仓库以后,我们还需要做一个很重要的步骤,就是发布github pages.请看下图:</p>
+<p><img src="images/github_rep.png" alt=""></p>
+<p>可以看到我新建的仓库里面已经有很多东西了,没错,这个就是我们通过hexo生成的静态博客,不过新帐号是没有的哟!我们点击右侧的settings菜单,进入设置界面,往下滑动到以下位置:</p>
+<p><img src="images/github_rep_setting.png" alt=""></p>
+<p>然后我们点击Launch automatic page generator去发布自己的page.注意(如果你想删除自己的仓库的话,点击下面的delete this repository即可),点击后会跳到一个layout界面去,意思就是设置你自己站点的布局,这里我们直接跳过,点击下面的continue to layouts继续,最后到达最终的发布页面.</p>
+<p><img src="images/github_page_pub.png" alt=""></p>
+<p>这里提醒大家的是,上面虽然有各种选择的样式,但是我们的最终目的是搭建hexo,而不是创建自己的github pages,所以这里随便选一个主题,然后点击 publish page即可.至此,github这边的工作已经基本完成了.发布以后我们就能通过 <a href="http://liumouren.github.io" target="_blank" rel="external">http://liumouren.github.io</a>去访问自己的站点了.</p>
+<hr>
+<p>好了,到此基本上也已经讲完了.大致的总结一下吧.</p>
+<ol>
+<li>首先我们需要安装在你本地电脑安装git或者github客户端</li>
+<li>到github官网注册一个账号,并新建一个仓库发布</li>
+<li>根据hexo官方文档介绍,生成本地静态博客</li>
+<li>上传你的博客</li>
+</ol>
+<p>说一下本人遇到过的几个问题吧.</p>
+<p>本地博客生成完了以后记得修改_config.yml文件</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">deploy:</span></span><br><span class="line"><span class="string">type:</span> git </span><br><span class="line"><span class="string">repository:</span> <span class="string">https:</span><span class="comment">//github.com/liumouren/liumouren.github.io.git</span></span><br><span class="line"><span class="string">branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>如果在执行 hexo d的过程中遇到命令行报错,说什么 not found git什么什么的,这时候只需要执行下面的命令即可.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
 
       
     </div>
